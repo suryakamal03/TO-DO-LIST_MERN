@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const cors = require('cors');
-const port = 5000;
+const port = process.env.PORT || 5000;
 const schematodo = require('./models/Schema.js');
 app.use(express.json());
 app.use(cors());
