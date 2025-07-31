@@ -46,9 +46,9 @@ function Todo() {
   async function deleteitem(id) {
     try {
       // THIS IS THE FIX: Added a '/' before the id
-      await fetch(`https://to-do-list-mern-bs43.onrender.com/api/todos${id}`, {
-        method: "DELETE"
-      });
+      await fetch(`https://to-do-list-mern-bs43.onrender.com/api/todos/${id}`, {
+  method: "DELETE"
+});
       settodolist(todolist.filter(item => item._id !== id));
     } catch (err) {
       console.log("Failed to delete:", err);
