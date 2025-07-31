@@ -9,7 +9,7 @@ function Todo() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/todos');
+        const response = await fetch('https://to-do-list-mern-bs43.onrender.com/api/todos');
         const data = await response.json();
         settodolist(data);
       } catch (err) {
@@ -27,7 +27,7 @@ function Todo() {
         alert('Please enter a task');
         return;
       }
-      const response = await fetch('http://localhost:5000/api/todos', {
+      const response = await fetch('https://to-do-list-mern-bs43.onrender.com/api/todos', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json' // Corrected 'content-type'
@@ -46,7 +46,7 @@ function Todo() {
   async function deleteitem(id) {
     try {
       // THIS IS THE FIX: Added a '/' before the id
-      await fetch(`http://localhost:5000/api/todos/${id}`, {
+      await fetch(`https://to-do-list-mern-bs43.onrender.com/api/todos${id}`, {
         method: "DELETE"
       });
       settodolist(todolist.filter(item => item._id !== id));
